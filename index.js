@@ -7,19 +7,19 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 // const { writeFile } = require('./dist')
 
-// New Manage prompt questions
+// New Manager prompt questions
 const promptManager = () => {
     inquirer
     .prompt([
         {
             type: 'input',
             name: 'managerName',
-            message: "Please enter the name of the team manager",
+            message: "Please enter the name of the team Manager",
             validate: managerNameInput => {
                 if (managerNameInput) {
                   return true;
                 } else {
-                  console.log('You need to enter a manager name!');
+                  console.log("You need to enter the Manager's name!");
                   return false;
                 }
               }
@@ -27,7 +27,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'managerID',
-            message: "Please enter manager's ID number",
+            message: "Please enter Manager's ID number",
             validate: managerIDInput => {
                 if (managerIDInput) {
                   return true;
@@ -40,7 +40,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'managerEmail',
-            message: "Please enter manager's Email address",
+            message: "Please enter Manager's Email address",
             validate: managerEmailInput => {
                 if (managerEmailInput) {
                   return true;
@@ -53,7 +53,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'managerNumber',
-            message: "Please enter manager's office number",
+            message: "Please enter Manager's office number",
             validate: managerNumberInput => {
                 if (managerNumberInput) {
                   return true;
@@ -63,6 +63,75 @@ const promptManager = () => {
                 }
               }
         },
+    ])
+}
+
+// // New Engineer prompt questions
+const promptEngineer = () => {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'engineerName',
+            message: "Please enter the name of the Engineer",
+            validate: engineerNameInput => {
+                if (engineerNameInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Engineer's name!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'engineerID',
+            message: "Please enter Engineer's ID",
+            validate: engineerIDInput => {
+                if (engineerIDInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Engineer's ID!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'engineerEmail',
+            message: "Please enter Engineer's Email",
+            validate: engineerEmailInput => {
+                if (engineerEmailInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Engineer's Email address!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'engineerGithub',
+            message: "Please enter Engineer's GitHub username",
+            validate: engineerGithubInput => {
+                if (engineerGithubInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Engineer's GitHub username!");
+                  return false;
+                }
+              }
+        },
+    ])
+}
+
+//// New Intern prompt questions
+const promptIntern = () => {
+    inquirer
+    .prompt([
+        {
+
+        }
     ])
 }
 
