@@ -14,7 +14,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'managerName',
-            message: "Please enter the name of the team Manager",
+            message: "Please enter team Manager's name",
             validate: managerNameInput => {
                 if (managerNameInput) {
                   return true;
@@ -73,7 +73,7 @@ const promptEngineer = () => {
         {
             type: 'input',
             name: 'engineerName',
-            message: "Please enter the name of the Engineer",
+            message: "Please enter Engineer's name",
             validate: engineerNameInput => {
                 if (engineerNameInput) {
                   return true;
@@ -130,8 +130,57 @@ const promptIntern = () => {
     inquirer
     .prompt([
         {
-
-        }
+            type: 'input',
+            name: 'internName',
+            message: "Please enter Intern's name",
+            validate: internNameInput => {
+                if (internNameInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Intern's name!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'internID',
+            message: "Please enter Intern's ID",
+            validate: internIDInput => {
+                if (internIDInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Intern's ID!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'internEmail',
+            message: "Please enter Intern's Email address",
+            validate: internEmailInput => {
+                if (internEmailInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Intern's Email address!");
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'internSchool',
+            message: "Please enter Intern's school",
+            validate: internSchoolInput => {
+                if (internSchoolInput) {
+                  return true;
+                } else {
+                  console.log("You need to enter the Intern's school!");
+                  return false;
+                }
+              }
+        },
     ])
 }
 
