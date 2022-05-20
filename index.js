@@ -1,11 +1,10 @@
 // getting packages and modules
 const inquirer = require('inquirer');
-const fs = require('fs');
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-// const { writeFile } = require('./dist')
+const { writeFile, copyFile } = require('./utils/generate-site');
 
 // New Manager prompt questions
 const promptManager = () => {
