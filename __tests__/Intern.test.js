@@ -1,1 +1,11 @@
-jest.mock('../lib/Intern.js')
+const Intern = require('../lib/Intern');
+
+// jest.mock('../lib/Intern.js')
+
+// test('', () => {
+
+// });
+
+// test('', () => {
+
+// });
