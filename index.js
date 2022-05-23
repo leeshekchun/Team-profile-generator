@@ -62,6 +62,21 @@ const promptManager = () => {
                 }
               }
         },
+        // aa seperate inquirer (function)
+        {
+            type: 'checkbox',
+            name: 'teamMembers',
+            message: 'Please add an engineer or intern to finish building the team?',
+            choices: ['Engineer', 'Intern'],
+            validate: teamMembersInput => {
+              if (teamMembersInput) {
+                return true;
+              } else {
+                console.log("You need to add at least one member in the team!");
+                return false;
+              }
+            }  
+        }
     ])
 }
 
@@ -184,4 +199,5 @@ const promptIntern = () => {
 }
 
 //  Start application
-promptManager();
+promptManager()
+    .then()

@@ -5,6 +5,7 @@ const name = 'Chris';
 const newEmploy = new Employee(name);
 
 expect(newEmploy.name).toBe('Chris');
+
 });
 
 test('create employee ID in Employee function', () => {
