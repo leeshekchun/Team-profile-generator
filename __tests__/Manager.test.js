@@ -2,20 +2,9 @@ const Manager = require('../lib/Manager');
 
 jest.mock('../lib/Manager.js');
 
-test('creates manager object', () => {
-    const manager = new Manager('Chris')
+test('get office number from class Manager', () => {
+const officeNumber = '1234'
+const newManagerOfficeNumber = new Manager('Chris', '008', 'Chris008@@gmail.com', officeNumber)
 
-    expect(manager.name).toBe('Chris')
-    expect(manager.id).toBe(expect.any(Number))
-    expect(manager.email).toBe(expect.any(Number))
-    expect(manager.officeNumber).toBe(expect.any(Number))
-
+expect(newManagerOfficeNumber.officeNumber).toBe(officeNumber)
  });
-
-// test('', () => {
-
-// });
-
-// test('', () => {
-
-// });

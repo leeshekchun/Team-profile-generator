@@ -5,7 +5,6 @@ const name = 'Chris';
 const newEmploy = new Employee(name);
 
 expect(newEmploy.name).toBe('Chris');
-
 });
 
 test('create employee ID in Employee function', () => {
@@ -16,7 +15,7 @@ expect(newEmployeeID.id).toBe(id)
 })
 
 test('create employee email in Employee fucntion', () => {
-const email = 'chris007@gmail.com'
+const email = 'chris007@gmail.com';
 const newEmployeeEmail = new Employee('Chris', '007', email);
 
 expect(newEmployeeEmail.email).toBe(email)
