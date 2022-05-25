@@ -4,7 +4,7 @@ test('create employee name in Employee function', () => {
 const name = 'Chris';
 const newEmploy = new Employee(name);
 
-expect(newEmploy.name).toBe('Chris');
+expect(newEmploy.name).toBe(name);
 });
 
 test('create employee ID in Employee function', () => {
@@ -22,29 +22,29 @@ expect(newEmployeeEmail.email).toBe(email)
 })
 
 test('gets employee name from getName() function', () => {
-    const name = 'Chris';
-    const newEmploy = new Employee(name);
+const name = 'Chris';
+const newEmploy = new Employee(name);
     
-    expect(newEmploy.getName()).toBe('Chris');
+expect(newEmploy.getName()).toBe(name);
 })
 
 test('get employee ID from getID() function', () => {
-    const id = '007';
-    const newEmployeeID = new Employee('Chris', id);
+const id = '007';
+const newEmployeeID = new Employee('Chris', id);
     
-    expect(newEmployeeID.getID()).toBe(id)
+expect(newEmployeeID.getID()).toBe(id)
 })
 
 test('get employee Email from getEmail() function', () => {
-    const email = 'chris007@gmail.com';
-    const newEmployeeEmail = new Employee('Chris', '007', email);
+const email = 'chris007@gmail.com';
+const newEmployeeEmail = new Employee('Chris', '007', email);
     
-    expect(newEmployeeEmail.getEmail()).toBe(email)
+expect(newEmployeeEmail.getEmail()).toBe(email)
 })
 
 test('get employee role from getRole() function', () => {
-    const role = 'Employee';
-    const newEmployeeRole = new Employee('Chris', '007', 'chris007@gmail.com', role);
+const role = 'Employee';
+const newEmployeeRole = new Employee('Chris', '007', 'chris007@gmail.com', role);
 
-    expect(newEmployeeRole.getRole()).toBe(role)
+expect(newEmployeeRole.getRole()).toBe(role)
 })

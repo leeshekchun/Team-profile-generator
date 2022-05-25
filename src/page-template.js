@@ -47,6 +47,7 @@ const cardIntern = intern => {
 
 const cardEngineer = engineer => {
     return `
+    // put a column
     <div id="cardHeader">
     <div class="name">
       <h3>${ engineer.name }</h3>
@@ -67,14 +68,22 @@ const cardEngineer = engineer => {
 `;
 };
 
-
 // export function to generate entire page
-module.export = templateData => {
-    //destructure page data by section
-    const { header, cardTitle, ...cardBody } = templateData;
+module.exports = templateData => {
+let card = ''
 
-    // create a variable that store the entire string of each function
-    // foreach loop
+  for (let teamMember of templateData) {
+      console.log(teamMember.getRole())
+      // if conditional for getRole()
+      if (teamMember.getRole() === "Engineer") {
+        card += cardEngineer(teamMember)
+      } else if (teamMember.getRole() === "Intern") {
+        card += cardIntern(teamMember)
+      } else if (teamMember.getRole() === "Manager") {
+        card += cardManager(teamMember)
+      }
+  } 
+
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -92,13 +101,18 @@ module.export = templateData => {
     <body>
       <header class="container">
         <div>
-          <h1>${header.name}</h1>
+          <h1>Team Profile Generator</h1>
         </div>
       </header>
 
       <main class="container">
-// map function base on employee
-// call the stored variable 
+
+        <div class="container">
+          <div class="row">
+              ${ card }
+          </div>
+        </div>
+
       </main>
 
     </body>

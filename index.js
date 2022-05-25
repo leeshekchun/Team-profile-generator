@@ -4,7 +4,10 @@ const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const { writeFile, copyFile } = require('./utils/generate-site');
+const renderHTML = require('./utils/generate-site');
+const pageTemplate = require('./src/page-template');
+
+let team = [];
 
 // New Manager prompt questions
 const promptManager = () => {
@@ -62,22 +65,52 @@ const promptManager = () => {
                 }
               }
         },
-        // aa seperate inquirer (function)
+    ])
+// Promise chain
+.then(function(response) {
+  team.push(new Manager(response.managerName, response.managerID, response.managerEmail, response.managerNumber))
+addTeam();
+})
+.catch(function(error) {
+  console.log("There's an error")
+})
+
+}
+
+// Next prompt
+const generateTeam = (data) => {
+pageTemplate(data)
+}
+
+// Add team members after manager prompt
+const addTeam = () => {
+    inquirer.prompt([
         {
-            type: 'checkbox',
-            name: 'teamMembers',
-            message: 'Please add an engineer or intern to finish building the team?',
-            choices: ['Engineer', 'Intern'],
-            validate: teamMembersInput => {
-              if (teamMembersInput) {
-                return true;
-              } else {
-                console.log("You need to add at least one member in the team!");
-                return false;
-              }
-            }  
+          type: 'list',
+          name: 'teamMembers',
+          message: 'Please add an engineer or intern to the team',
+          choices: ['Engineer', 'Intern', 'Done'],
+          validate: teamMembersInput => {
+            if (teamMembersInput) {
+              return true;
+            } else {
+              console.log("You need to add at least one member in the team!");
+              return false;
+            }
+          }  
         }
     ])
+
+// Promise chain
+.then(function(response) {
+  if (response.teamMembers === 'Engineer') {
+    promptEngineer();
+  } else if (response.teamMembers === 'Intern') {
+    promptIntern();
+  } else if (response.teamMembers === 'Done') {
+    generateTeam(team)
+  }
+})
 }
 
 // // New Engineer prompt questions
@@ -137,6 +170,16 @@ const promptEngineer = () => {
               }
         },
     ])
+
+// Promise chain
+.then(function(response) {
+  team.push(new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGithub))
+addTeam()
+  })
+.catch(function(error) {
+  console.log("There's an error")
+  })
+
 }
 
 //// New Intern prompt questions
@@ -196,8 +239,18 @@ const promptIntern = () => {
               }
         },
     ])
+
+// Promise chain
+.then(function(response) {
+  team.push(new Intern(response.internName, response.internID, response.internEmail, response.internSchool))
+addTeam()
+  })
+.catch(function(error) {
+  console.log("There's an error")
+  })
+
 }
 
 //  Start application
 promptManager()
-    .then()
+
