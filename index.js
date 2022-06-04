@@ -79,7 +79,7 @@ addTeam();
 
 // Next prompt
 const generateTeam = (data) => {
-pageTemplate(data)
+  renderHTML(pageTemplate(data))
 }
 
 // Add team members after manager prompt
