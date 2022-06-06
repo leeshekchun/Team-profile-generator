@@ -18,7 +18,7 @@ https://drive.google.com/file/d/19F0pqDk0NYgVLPesbxXFzX2HpivB8pOS/view
 ![generatedindex.html](./img/generated-Index.png)
 
 
-*Tests result (run "npm test"):
+*Tests result (run "npm run test"):
 https://drive.google.com/file/d/1-p_UkAYyS_AG_NuPoDkTapKMOntdLaZ5/view
 
 ## Credits
