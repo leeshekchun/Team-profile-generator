@@ -11,14 +11,15 @@ The application will be invoked by using the following command:
 
 ## Demonstration
 *Prompt questions (run "node index"):
-
+https://drive.google.com/file/d/19F0pqDk0NYgVLPesbxXFzX2HpivB8pOS/view
 
 
 *Example of the generated index.html:
-
+![generatedindex.html](./img/generated-Index.png)
 
 
 *Tests result (run "npm test"):
+https://drive.google.com/file/d/1-p_UkAYyS_AG_NuPoDkTapKMOntdLaZ5/view
 
 ## Credits
 Module 10 lesson 1-5
